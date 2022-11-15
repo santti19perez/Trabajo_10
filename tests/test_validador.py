@@ -117,7 +117,7 @@ def test_clave_invalida_sin_numero_genera_error_con_ganimedes(validador_ganimede
         validador_ganimedes.es_valida(clave)
 
 
-def test_clave_invalida_sin_guion_bajo_genera_error_con_ganimedes(validador_ganimedes):
+def test_clave_invalida_sin_caracter_especial_genera_error_con_ganimedes(validador_ganimedes):
     clave = "ASDDSassd-3"
     with pytest.raises(NoTieneCaracterEspecialError):
         validador_ganimedes.es_valida(clave)
@@ -163,3 +163,4 @@ def test_clave_invalida_sin_palabra_secreta_genera_error_con_calisto(validador_c
 def test_es_clave_valida_con_calisto(clave):
     validador = Validador(ReglaValidacionCalisto())
     assert validador.es_valida(clave) is True
+
